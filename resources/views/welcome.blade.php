@@ -32,7 +32,8 @@
                 <div class="flex" style="align-items:center;">
                     <p>Te doen: {{ $listItem->name }}</p>
 
-                    <form method="post" action="{{route('markComplete')}}" accept-charset="UTF-8">
+                    <form method="post" action="{{route('markComplete', $listItem->id)}}" accept-charset="UTF-8">
+                    {{ csrf_field() }}
                     <button type="Submit" style="max-height: 25; margin-left: 20px;">Klaar!</button>
                 </form>
                 </div>

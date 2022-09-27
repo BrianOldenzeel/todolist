@@ -18,4 +18,4 @@ Route::get('/', [TodolistController::class, 'index'] );
 
 Route::post('/saveItemRoute', [TodolistController::class, 'saveItem'])->name('saveItem');
 
-Route::post('/markCompleteRoute', [TodolistController::class, 'markComplete'])->name('markComplete');
+Route::post('/markCompleteRoute/{id}', [TodolistController::class, 'markComplete'])->name('markComplete');
