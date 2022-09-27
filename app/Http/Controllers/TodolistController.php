@@ -9,7 +9,11 @@ class TodolistController extends Controller
 {
     
         public function index() {
-            return view('welcome', ['ListItems' => ListItem::all()]);
+            return view('welcome', ['listItems' => ListItem::all()]);
+        }
+    
+        public function markComplete() {
+            return redirect('/');
         }
     
 
@@ -19,6 +23,6 @@ class TodolistController extends Controller
         $newListItem->is_complete = 0;
         $newListItem->save();
         
-        return view('welcome');
+        return redirect('/');
     }
 }
